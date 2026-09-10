@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { LogoBadge } from "@/components/LogoBadge";
+import { BankLogos } from "@/components/portal/BankLogos";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { nationalities } from "@/data/mockData";
@@ -495,9 +496,12 @@ export const NewStudentRegistration = ({ onBack }: NewStudentRegistrationProps) 
         {step === 'payment' && !showPaymentProcessing && (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 space-y-4">
-              <h2 className={`text-xl font-bold ${fontClass}`}>
-                {language === 'th' ? 'เลือกวิธีชำระเงิน' : 'Select Payment Method'}
-              </h2>
+              <div className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-x-3 gap-y-2">
+                <h2 className={`text-xl font-bold ${fontClass}`}>
+                  {language === 'th' ? 'เลือกวิธีชำระเงิน' : 'Select Payment Method'}
+                </h2>
+                <BankLogos />
+              </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {paymentMethods.map((method) => (
                   <div

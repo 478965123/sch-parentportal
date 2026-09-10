@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { PaymentProcessing } from "./PaymentProcessing";
+import { BankLogos } from "./BankLogos";
 import { PaymentProgressBar } from "./PaymentProgressBar";
 
 interface CreditNote {
@@ -143,9 +144,12 @@ export const ActivityCheckout = ({
         <div className="lg:col-span-3 space-y-8">
           {/* Payment Method Selection */}
           <div className="space-y-4">
-            <h2 className={`text-2xl font-bold ${language === 'th' ? 'font-sukhumvit' : language === 'zh' ? 'font-noto-sc' : 'font-lato'}`}>
-              {t('processing.selectPayment')}
-            </h2>
+            <div className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-x-3 gap-y-2">
+              <h2 className={`text-2xl font-bold ${language === 'th' ? 'font-sukhumvit' : language === 'zh' ? 'font-noto-sc' : 'font-lato'}`}>
+                {t('processing.selectPayment')}
+              </h2>
+              <BankLogos />
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {paymentMethods.map((method) => (
                 <div

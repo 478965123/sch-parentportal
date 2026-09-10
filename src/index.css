@@ -229,6 +229,45 @@ All colors MUST be HSL.
   }
 }
 
+/* Login card — iridescent halo, echoing the glassy card in the wallpaper */
+@keyframes login-glow {
+  0%, 100% {
+    opacity: 0.75;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) rotate(8deg);
+  }
+}
+
+.login-card-glow::before {
+  content: "";
+  position: absolute;
+  inset: -26px;
+  border-radius: 40px;
+  background: conic-gradient(
+    from 180deg,
+    #818cf8,
+    #e879f9,
+    #38bdf8,
+    #a78bfa,
+    #f0abfc,
+    #818cf8
+  );
+  filter: blur(34px);
+  animation: login-glow 7s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .login-card-glow::before {
+    animation: none;
+    opacity: 0.85;
+  }
+}
+
 /* Mobile Animation Utilities */
 .animate-collapsible-down {
   animation: collapsible-down 0.3s ease-out;

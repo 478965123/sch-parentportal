@@ -35,11 +35,12 @@ export const Login = ({ onLogin, onRegister }: LoginProps) => {
 
         {/* Centered Card */}
         <div className="flex-1 flex items-center justify-center px-4 py-8">
+          <div className="relative w-full login-card-glow" style={{ maxWidth: 400 }}>
           <div
-            className="w-full bg-white rounded-2xl"
+            className="relative bg-white rounded-2xl"
             style={{
-              maxWidth: 400,
-              boxShadow: "0 4px 24px rgba(0,0,0,0.1)",
+              boxShadow:
+                "0 0 0 5px rgba(255,255,255,0.9), 0 0 0 6px rgba(255,255,255,0.5), 0 12px 44px rgba(99,102,241,0.28), 0 0 70px rgba(56,189,248,0.25)",
               padding: "32px 40px",
             }}
           >
@@ -78,6 +79,7 @@ export const Login = ({ onLogin, onRegister }: LoginProps) => {
               <UserPlus className="h-5 w-5 mr-2" />
               {language === 'th' ? 'ลงทะเบียนนักเรียนใหม่' : language === 'zh' ? '新生注册' : 'New Student Registration'}
             </Button>
+          </div>
           </div>
         </div>
 

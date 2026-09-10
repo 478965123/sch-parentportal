@@ -3,7 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { LogoBadge } from "@/components/LogoBadge";
 import { Button } from "@/components/ui/button";
 import { LogIn, UserPlus } from "lucide-react";
-import schoolBuilding from "@/assets/school-building-new.jpg";
+import loginWallpaper from "@/assets/login-wallpaper.png";
 
 interface LoginProps {
   onLogin: () => void;
@@ -17,14 +17,11 @@ export const Login = ({ onLogin, onRegister }: LoginProps) => {
     <div className="min-h-screen flex">
       {/* Left Side — 65% */}
       <div
-        className="hidden lg:block lg:w-[65%] fixed h-screen left-0 top-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${schoolBuilding})` }}
+        className="hidden lg:block lg:w-[65%] fixed h-screen left-0 top-0 bg-contain bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${loginWallpaper})`, backgroundColor: "#f7f9fd" }}
       >
-        <div className="absolute inset-0 bg-black/30" />
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center text-white z-10 max-w-lg px-4">
-          <h2 className="text-2xl font-bold mb-2">Parent Portal</h2>
-          <p className="text-lg mb-2">Manage your child's education journey</p>
-          <p className="text-xs opacity-70">© 2024 Schooney Educational System</p>
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center z-10 max-w-lg px-4">
+          <p className="text-xs text-gray-400">© 2024 Schooney Educational System</p>
         </div>
       </div>
 
